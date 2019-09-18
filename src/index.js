@@ -7,9 +7,10 @@ function titTacToe () {
         icon: "X",
         iconTwo: "O",
         GameOver: false,
+        winningMessage: ' won the game'
    };
 
-   let {turn, icon, iconTwo, GameOver} =  GameManager;
+   let {turn, icon, iconTwo, GameOver, winningMessage} =  GameManager;
 
    // Player
    const Player = (playerName,playerIcon)=>{
@@ -18,24 +19,22 @@ function titTacToe () {
        return{name, icon}
    };
 
-   let nameOne = "hi";//window.prompt("PlayerOne name");
-   let nameTWo = "bye" ;//window.prompt("PlayerTwo name ");
+   let nameOne = window.prompt("PlayerOne name");
+   let nameTwo = window.prompt("PlayerTwo name");
    const playerOne = Player(nameOne,icon );
-   const playerTwo = Player(nameOne,iconTwo );
+   const playerTwo = Player(nameTwo,iconTwo );
 
 
     const winningCases = (array) => {
-
         array.flat().forEach(boxArray=>{
-            console.log(array.flat());
-            if(boxArray.every(e => e.innerHTML === 'X')){
-
-                alert('Winner' + selectPlayer().name())
+            if(boxArray.every(e => e.innerHTML === icon)){
+                turn += 1
+                gameOver(selectPlayer().name() + winningMessage, true)
             }
 
-            if(boxArray.every(e => e.innerHTML === 'O')){
-                alert('Winner' + selectPlayer().name())
-
+            if(boxArray.every(e => e.innerHTML === iconTwo)){
+                turn += 1
+                gameOver(selectPlayer().name() + winningMessage, true)
             }
 
         })
@@ -67,10 +66,16 @@ function titTacToe () {
    };
 
    const playerTurn = (element) => {
-       
+
+        if(element.target.innerText !== '') {
+            alert('Ilegal move, position already taken')
+            return playerTurn
+        }
        element.target.innerHTML =  selectPlayer().icon();
        turn -= 1;
-      /// gameOver(selectPlayer().name());
+       if(turn === 0) {
+        gameOver("Draw, losers", true)
+       }
        console.log(turn)
    };
 
@@ -82,13 +87,11 @@ function titTacToe () {
        }, 4000)
    };
 
-   const gameOver = (playerName, over) => {
+   const gameOver = (playerName, over = false) => {
        GameOver = over;
-        if(turn === 0) {
-            alert("It's a draw")
+        if(GameOver) {
+            alert(playerName);
         }
-
-        alert(playerName + " won the game");
    };
 
    const boxes = document.querySelectorAll('.box');

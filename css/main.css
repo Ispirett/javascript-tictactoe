@@ -1,10 +1,13 @@
 .container {
-  margin: 10em auto 0;
+  margin: 5em auto 0;
   width: 70%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 14em);
   grid-gap: 1em; }
+
+.msg {
+  height: 3em; }
 
 .box {
   border: 1px solid rgba(117, 117, 117, 0.67); }
