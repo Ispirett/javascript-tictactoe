@@ -9,7 +9,7 @@ function titTacToe () {
         GameOver: false,
    };
 
-   let {turn, icon, iconTwo} =  GameManager;
+   let {turn, icon, iconTwo, GameOver} =  GameManager;
 
    // Player
    const Player = (playerName,playerIcon)=>{
@@ -29,16 +29,35 @@ function titTacToe () {
    };
 
    const playerTurn = (element) => {
+       
        element.target.innerHTML =  selectPlayer().icon();
        turn -= 1
+       gameOver(selectPlayer().name())
+       console.log(turn)
    };
 
+   const displayMessage = (message) => {
+       let msg = document.getElementById('msg');
+       msg.innerText = message;
+       setTimeout(() => {
+            msg.innerText = ''
+       }, 4000)
+   }
+
+   const gameOver = (playerName) => {
+        GameOver = true;
+        if(turn === 0) {
+            alert("It's a draw")
+        }
+        alert(playerName + " won the game");
+   }
 
    const boxes = document.querySelectorAll('.box');
 
     boxes.forEach((box, index)=>{
         box.onclick = (element) =>{
             playerTurn(element)
+            displayMessage(element.target.innerText);
         }
 
     })
