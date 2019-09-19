@@ -1,19 +1,19 @@
 import { Player, selectPlayer } from './player'
 import { winningCases, winningPositions } from './board'
 import { displayMessage } from "./utilties";
+import GameManager from "./gameManager"
 
 function titTacToe() {
 
-    const GameManager = {
-        turn: 9,
-        icon: "X",
-        iconTwo: "O",
-        GameOver: false,
-        winningMessage: ' won the game'
-    };
+    const  gameManager = new GameManager(
+        9,
+        'X',
+        "O",
+        false,
+        " Won the game");
 
 
-    let { turn, icon, iconTwo, GameOver, winningMessage } = GameManager;
+    let { turn, icon, iconTwo, GameOver, winningMessage } = gameManager;
 
     let nameOne = window.prompt("PlayerOne name");
     let nameTwo =  window.prompt("PlayerTwo name");
