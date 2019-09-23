@@ -1,6 +1,6 @@
-const displayMessage = (player) => {
+const displayMessage = (message) => {
     let msg = document.getElementById('msg');
-    msg.innerText = `It's ${player.name()} turn`;
+    msg.innerText = message;
 };
 
 export {

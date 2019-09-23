@@ -1,5 +1,6 @@
 import {selectPlayer} from "./player";
-import {addAnimation} from "./animation";
+import {addAnimation, addBadInputAnim} from "./animation";
+import { displayMessage } from "./utilties";
 
 const winningCases = (array, params) => {
     let { turn, currentPlayer, gameOver, icon, iconTwo, winningMessage } = params;
@@ -39,10 +40,11 @@ const winningPositions = (b) => {
     return [horizontal, vertical, diagonal]
 };
 
-const isPositionTaken = (element, switchTurn) =>{
+const isPositionTaken = (element) =>{
     if (element.target.innerText !== '') {
-        alert('Illegal move, position already taken Dont do it again!!');
-        return switchTurn
+        displayMessage('Illegal move, position already taken Dont do it again!!');
+        addBadInputAnim();
+        return true;
     }
 };
 
@@ -53,10 +55,9 @@ const setPosition = (element, currentPlayer) =>{
 
 const drawGame = (turn,GameOver, gameOver) =>{
     if (turn === 0 && !GameOver) {
-        gameOver("Draw, losers", true)
+        gameOver("Too bad, it's a draw!", true)
     }
 };
-
 
 export {
     winningCases,

@@ -2,7 +2,6 @@ body {
   text-align: center; }
 
 .container {
-  animation: arriving 1s forwards;
   background: url(../assets/modified-cross-4.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -13,6 +12,9 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 14em);
   grid-gap: 1em; }
+
+.cross-animation {
+  animation: arriving 1s forwards; }
 
 .msg {
   height: 3em;
@@ -32,6 +34,9 @@ body {
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
+.wrong-input {
+  animation: nope 500ms; }
+
 @keyframes vanilla {
   from {
     opacity: 0;
@@ -49,5 +54,23 @@ body {
   80% {
     opacity: 1;
     transform: translateX(9%); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes nope {
+  0% {
+    transform: translateX(0); }
+  15% {
+    transform: translateX(15%); }
+  30% {
+    transform: translateX(-15%); }
+  45% {
+    transform: translateX(15%); }
+  60% {
+    transform: translateX(-15%); }
+  75% {
+    transform: translateX(15%); }
+  90% {
+    transform: translateX(-15%); }
   100% {
     transform: translateX(0); } }

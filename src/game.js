@@ -1,6 +1,7 @@
 import { Player, selectPlayer } from './player'
 import { winningCases, winningPositions, isPositionTaken,setPosition,drawGame } from './board'
 import { displayMessage } from "./utilties";
+import { removeAnimation } from "./animation"
 import GameManager from "./gameManager"
 
 function titTacToe() {
@@ -12,17 +13,18 @@ function titTacToe() {
         false,
         " Won the game");
 
-
     let { turn, icon, iconTwo, GameOver, winningMessage } = gameManager;
 
     let nameOne = 'x' //window.prompt("PlayerOne name");
     let nameTwo = 'o'  //window.prompt("PlayerTwo name");
     const playerOne = Player(nameOne, icon);
     const playerTwo = Player(nameTwo, iconTwo);
-
+    
+    removeAnimation();
+    
     const switchTurn = (element) => {
         const currentPlayer = selectPlayer(turn, playerOne, playerTwo);
-        isPositionTaken(element, switchTurn);
+        if(isPositionTaken(element)) return switchTurn;
         setPosition(element,currentPlayer);
 
         const positions = winningPositions(boxes);
@@ -33,7 +35,7 @@ function titTacToe() {
             winningMessage });
 
         turn -= 1;
-        drawGame(turn,GameOver, gameOver());
+        drawGame(turn,GameOver, gameOver);
         console.log(turn)
     };
 
@@ -49,7 +51,8 @@ function titTacToe() {
     boxes.forEach((box, index) => {
         box.onclick = (element) => {
             switchTurn(element);
-            displayMessage(selectPlayer(turn, playerOne, playerTwo));
+            const playerName = selectPlayer(turn, playerOne, playerTwo).name();
+            displayMessage(`It's ${playerName} turn`);
         }
 
     })
