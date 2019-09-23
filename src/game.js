@@ -20,8 +20,6 @@ function titTacToe() {
     const playerOne = Player(nameOne, icon);
     const playerTwo = Player(nameTwo, iconTwo);
 
-
-
     const switchTurn = (element) => {
         const currentPlayer = selectPlayer(turn, playerOne, playerTwo);
         isPositionTaken(element, switchTurn);
@@ -44,7 +42,6 @@ function titTacToe() {
         if (GameOver) {
             if (confirm(playerName + " Do you want to play again?")) window.location.reload();
             else window.close()
-
         }
     };
 
@@ -52,8 +49,7 @@ function titTacToe() {
     boxes.forEach((box, index) => {
         box.onclick = (element) => {
             switchTurn(element);
-            displayMessage(element.target.innerText);
-
+            displayMessage(selectPlayer(turn, playerOne, playerTwo));
         }
 
     })

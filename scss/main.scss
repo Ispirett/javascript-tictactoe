@@ -1,10 +1,15 @@
+body {
+  text-align: center;
+}
+
 .container{
-  animation: cross 1s forwards;
+  animation: vanilla 1s forwards;
   background: url(../assets/modified-cross-4.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: 5em auto 0;
   width: 40%;
+  min-width: 45em;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3,14em);
@@ -13,16 +18,28 @@
 
 .msg {
   height: 3em;
+  font-size: 1.8rem;
 }
 
-.box{
-  border: 1px solid rgba(117, 117, 117, 0.67);
-  &:hover{
-    box-shadow: 0px 4px 20px rgba(128, 128, 128, 0.29);
-  }
+.box {
+  color: transparent;
 }
 
-@keyframes cross {
+.mark-X {
+  animation: vanilla 1s forwards;
+  background: url(../assets/x-icon.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.mark-O {
+  animation: vanilla 1s forwards;
+  background: url(../assets/o-icon.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+@keyframes vanilla {
   from {
     opacity: 0;
     transform: scale(0.7);

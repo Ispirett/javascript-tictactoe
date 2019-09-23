@@ -1,4 +1,5 @@
 import {selectPlayer} from "./player";
+import {addAnimation} from "./animation";
 
 const winningCases = (array, params) => {
     let { turn, currentPlayer, gameOver, icon, iconTwo, winningMessage } = params;
@@ -47,6 +48,7 @@ const isPositionTaken = (element, switchTurn) =>{
 
 const setPosition = (element, currentPlayer) =>{
     element.target.innerHTML = currentPlayer.icon();
+    addAnimation(element.target, currentPlayer);
 };
 
 const drawGame = (turn,GameOver, gameOver) =>{

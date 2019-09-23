@@ -1,9 +1,6 @@
-const displayMessage = (message) => {
+const displayMessage = (player) => {
     let msg = document.getElementById('msg');
-    msg.innerText = message;
-    setTimeout(() => {
-        msg.innerText = ''
-    }, 4000)
+    msg.innerText = `It's ${player.name()} turn`;
 };
 
 export {
