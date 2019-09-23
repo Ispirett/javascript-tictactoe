@@ -11,12 +11,12 @@ function titTacToe() {
         'X',
         "O",
         false,
-        " Won the game");
+        "Won the game.");
 
     let { turn, icon, iconTwo, GameOver, winningMessage } = gameManager;
 
-    let nameOne = 'x' //window.prompt("PlayerOne name");
-    let nameTwo = 'o'  //window.prompt("PlayerTwo name");
+    let nameOne = window.prompt("PlayerOne name");
+    let nameTwo = window.prompt("PlayerTwo name");
     const playerOne = Player(nameOne, icon);
     const playerTwo = Player(nameTwo, iconTwo);
     
@@ -59,6 +59,5 @@ function titTacToe() {
 
 
 }
-
 
 titTacToe();
