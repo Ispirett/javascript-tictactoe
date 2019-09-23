@@ -15,8 +15,8 @@ function titTacToe() {
 
     let { turn, icon, iconTwo, GameOver, winningMessage } = gameManager;
 
-    let nameOne = window.prompt("PlayerOne name");
-    let nameTwo =  window.prompt("PlayerTwo name");
+    let nameOne = 'x' //window.prompt("PlayerOne name");
+    let nameTwo = 'o'  //window.prompt("PlayerTwo name");
     const playerOne = Player(nameOne, icon);
     const playerTwo = Player(nameTwo, iconTwo);
     const currentPlayer = selectPlayer(turn, playerOne, playerTwo);

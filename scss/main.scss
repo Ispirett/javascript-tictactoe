@@ -1,6 +1,10 @@
 .container{
+  animation: cross 1s forwards;
+  background: url(../assets/modified-cross-4.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   margin: 5em auto 0;
-  width: 70%;
+  width: 40%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3,14em);
@@ -15,5 +19,21 @@
   border: 1px solid rgba(117, 117, 117, 0.67);
   &:hover{
     box-shadow: 0px 4px 20px rgba(128, 128, 128, 0.29);
+  }
+}
+
+@keyframes cross {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  to {
+    transform: scale(1);
   }
 }
