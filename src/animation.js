@@ -1,5 +1,5 @@
 const addAnimation = (target, player) => {
-    target.classList.add(`mark-${player.icon()}`);
+    target.classList.add(`${player.icon()}-mark`, 'background');
 };
 
 export {

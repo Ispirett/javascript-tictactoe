@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"addAnimation\", function() { return addAnimation; });\nconst addAnimation = (target, player) => {\n    target.classList.add(`mark-${player.icon()}`);\n};\n\n\n\n//# sourceURL=webpack:///./src/animation.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"addAnimation\", function() { return addAnimation; });\nconst addAnimation = (target, player) => {\n    target.classList.add(`${player.icon()}-mark`, 'background');\n};\n\n\n\n//# sourceURL=webpack:///./src/animation.js?");
 
 /***/ }),
 

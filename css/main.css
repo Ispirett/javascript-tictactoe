@@ -2,7 +2,7 @@ body {
   text-align: center; }
 
 .container {
-  animation: vanilla 1s forwards;
+  animation: arriving 1s forwards;
   background: url(../assets/modified-cross-4.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -21,15 +21,14 @@ body {
 .box {
   color: transparent; }
 
-.mark-X {
-  animation: vanilla 1s forwards;
-  background: url(../assets/x-icon.svg);
-  background-position: 50% 50%;
-  background-repeat: no-repeat; }
+.X-mark {
+  background: url(../assets/x-icon.svg); }
 
-.mark-O {
+.O-mark {
+  background: url(../assets/o-icon.svg); }
+
+.background {
   animation: vanilla 1s forwards;
-  background: url(../assets/o-icon.svg);
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
@@ -42,3 +41,13 @@ body {
     transform: scale(1.05); }
   to {
     transform: scale(1); } }
+
+@keyframes arriving {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); }
+  80% {
+    opacity: 1;
+    transform: translateX(9%); }
+  100% {
+    transform: translateX(0); } }
