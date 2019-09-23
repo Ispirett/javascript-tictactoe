@@ -1,5 +1,5 @@
 import { Player, selectPlayer } from './player'
-import { winningCases, winningPositions } from './board'
+import { winningCases, winningPositions, isPositionTaken,setPosition,drawGame } from './board'
 import { displayMessage } from "./utilties";
 import GameManager from "./gameManager"
 
@@ -19,19 +19,23 @@ function titTacToe() {
     let nameTwo =  window.prompt("PlayerTwo name");
     const playerOne = Player(nameOne, icon);
     const playerTwo = Player(nameTwo, iconTwo);
-    const currentPlayer = selectPlayer(turn, playerOne, playerTwo);
+
 
 
     const switchTurn = (element) => {
-        if (element.target.innerText !== '') {
-            alert('Illegal move, position already taken Dont do it again!!');
-            return switchTurn
-        }
-        element.target.innerHTML = selectPlayer(turn, playerOne, playerTwo).icon();
+        const currentPlayer = selectPlayer(turn, playerOne, playerTwo);
+        isPositionTaken(element, switchTurn);
+        setPosition(element,currentPlayer);
+
+        const positions = winningPositions(boxes);
+        winningCases(positions, { turn,
+            currentPlayer,
+            gameOver, icon,
+            iconTwo,
+            winningMessage });
+
         turn -= 1;
-        if (turn === 0 && !GameOver) {
-            gameOver("Draw, losers", true)
-        }
+        drawGame(turn,GameOver, gameOver());
         console.log(turn)
     };
 
@@ -47,16 +51,9 @@ function titTacToe() {
     const boxes = document.querySelectorAll('.box');
     boxes.forEach((box, index) => {
         box.onclick = (element) => {
-
             switchTurn(element);
             displayMessage(element.target.innerText);
 
-            const positions = winningPositions(boxes);
-            winningCases(positions, { turn,
-                currentPlayer,
-                gameOver, icon,
-                iconTwo,
-                winningMessage });
         }
 
     })
