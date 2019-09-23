@@ -5,14 +5,10 @@ const Player = (playerName, playerIcon) => {
     return { name, icon }
 };
 
-
-
 const selectPlayer = (turn, playerOne, playerTwo) => {
     if (turn % 2 !== 0) return playerOne;
     else return playerTwo;
 };
-
-
 
 export {
     Player,

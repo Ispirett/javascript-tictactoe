@@ -8,15 +8,35 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 14em);
-  grid-gap: 1em; }
+  grid-gap: 1em; 
+}
 
 .msg {
-  height: 3em; }
+  height: 3em; 
+}
 
-.box {
-  border: 1px solid rgba(117, 117, 117, 0.67); }
-  .box:hover {
-    box-shadow: 0px 4px 20px rgba(128, 128, 128, 0.29); }
+/* .box { 
+  border: 1px solid rgba(117, 117, 117, 0.67); 
+  text-align: center; 
+}
+
+.box:hover {
+  box-shadow: 0px 4px 20px rgba(128, 128, 128, 0.29); 
+} */
+
+.mark-X {
+  animation: cross 1s forwards;
+  background: url(../assets/x-icon.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.mark-O {
+  animation: cross 1s forwards;
+  background: url(../assets/o-icon.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
 
 @keyframes cross {
   from {

@@ -19,7 +19,6 @@ function titTacToe() {
     let nameTwo = 'o'  //window.prompt("PlayerTwo name");
     const playerOne = Player(nameOne, icon);
     const playerTwo = Player(nameTwo, iconTwo);
-    const currentPlayer = selectPlayer(turn, playerOne, playerTwo);
 
 
     const switchTurn = (element) => {
@@ -27,12 +26,12 @@ function titTacToe() {
             alert('Illegal move, position already taken Dont do it again!!');
             return switchTurn
         }
-        element.target.innerHTML = selectPlayer(turn, playerOne, playerTwo).icon();
+        element.target.innerText = " ";
         turn -= 1;
         if (turn === 0 && !GameOver) {
             gameOver("Draw, losers", true)
         }
-        console.log(turn)
+        // console.log(turn)
     };
 
     const gameOver = (playerName, over = false) => {
@@ -47,6 +46,8 @@ function titTacToe() {
     const boxes = document.querySelectorAll('.box');
     boxes.forEach((box, index) => {
         box.onclick = (element) => {
+            const currentPlayer = selectPlayer(turn, playerOne, playerTwo);
+            box.classList.add(`mark-${currentPlayer.icon()}`);
 
             switchTurn(element);
             displayMessage(element.target.innerText);
