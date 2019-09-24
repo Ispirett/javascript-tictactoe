@@ -1,4 +1,5 @@
 /* global window, confirm */
+/* eslint no-restricted-globals: ["confirm"] */
 import { addAnimation, addBadInputAnim } from './animation';
 import utilities from './utilties';
 
@@ -12,7 +13,6 @@ const board = (() => {
       if (boxArray.every(e => e.innerHTML === icon)) {
         gameOver(winner, true, GameOver);
       }
-
       if (boxArray.every(e => e.innerHTML === iconTwo)) {
         gameOver(winner, true, GameOver);
       }
