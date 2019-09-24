@@ -4,20 +4,21 @@ import utilities from './utilties';
 
 const board = (() => {
   const winningCases = (array, params) => {
-    let { currentPlayer, GameOver, icon, iconTwo, winningMessage } = params;
+
+    const { currentPlayer, GameOver, icon, iconTwo, winningMessage } = params;
 
     const positions = winningPositions(array);
 
     const winner = currentPlayer.name() + winningMessage;
-    positions.flat().forEach(boxArray => {
+    positions.flat().forEach((boxArray) => {
       if (boxArray.every(e => e.innerHTML === icon)) {
-        gameOver(winner, true, GameOver)
+        gameOver(winner, true, GameOver);
       }
 
       if (boxArray.every(e => e.innerHTML === iconTwo)) {
-        gameOver(winner, true, GameOver)
+        gameOver(winner, true, GameOver);
       }
-    })
+    });
   };
 
   const winningPositions = (b) => {
@@ -80,4 +81,4 @@ const board = (() => {
 export {
   board,
 
-}
+};

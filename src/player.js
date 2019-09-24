@@ -28,12 +28,12 @@ const playerManager = (() => {
             else if (nameTwo === null) {
                 try {
                     callback();
-                } catch (e) {}
+                } catch (e) { }
                 return "Loser-For-Sure";
             }
             try {
                 callback();
-            } catch (e) {}
+            } catch (e) { }
             return nameTwo;
         };
 

@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/Ispirett/javascript-tictactoe#readme",
   "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb": "^18.0.1",
     "live-server": "^1.2.1",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.2",
