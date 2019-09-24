@@ -4,51 +4,49 @@ const playerManager = (() => {
     const Player = (playerName, playerIcon) => {
         const name = () => playerName;
         const icon = () => playerIcon;
-        return {name, icon}
+        return { name, icon };
     };
 
     const selectPlayer = (turn, playerOne, playerTwo) => {
         if (turn % 2 !== 0) return playerOne;
-        else return playerTwo;
+        return playerTwo;
     };
 
-    const getPlayerNames = (() =>{
+    const getPlayerNames = (() => {
         const playerOneName = () => {
             let nameOne = window.prompt("PlayerOne name");
-            if (nameOne === '') return playerOneName();
+            if (nameOne === "") return playerOneName();
             else if (nameOne === null) {
-                return 'Greatest-loser-ever'
+                return "Greatest-loser-ever";
             }
-            return nameOne
-
+            return nameOne;
         };
 
-        const playerTwoName = (callback) => {
+        const playerTwoName = callback => {
             let nameTwo = window.prompt("PlayerTwo name");
-            if (nameTwo === '') return playerTwoName();
-
+            if (nameTwo === "") return playerTwoName();
             else if (nameTwo === null) {
-                try{callback();}
-                catch (e) {}
-                return 'Loser-For-Sure';
-
+                try {
+                    callback();
+                } catch (e) {}
+                return "Loser-For-Sure";
             }
-            try{callback();}
-            catch (e) {}
-            return nameTwo
+            try {
+                callback();
+            } catch (e) {}
+            return nameTwo;
         };
 
-
-        return{
+        return {
             playerOneName,
             playerTwoName
-        }
+        };
     })();
 
-    return{
+    return {
         Player,
         selectPlayer,
         getPlayerNames
-    }
+    };
 })();
-export default playerManager
+export default playerManager;
