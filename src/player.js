@@ -4,36 +4,36 @@ const playerManager = (() => {
   const Player = (playerName, playerIcon) => {
     const name = () => playerName;
     const icon = () => playerIcon;
-    return { name, icon }
+    return { name, icon };
   };
 
   const selectPlayer = (turn, playerOne, playerTwo) => {
     if (turn % 2 !== 0) return playerOne;
-    else return playerTwo;
+    return playerTwo;
   };
 
   const getPlayerNames = (() => {
     const playerOneName = () => {
-      let nameOne = window.prompt("PlayerOne name");
+      const nameOne = window.prompt('PlayerOne name');
       if (nameOne === '') return playerOneName();
-      return nameOne
+      return nameOne;
     };
 
     const playerTwoName = () => {
-      let nameTwo = window.prompt("PlayerTwo name");
+      const nameTwo = window.prompt('PlayerTwo name');
       if (nameTwo === '') return playerTwoName();
-      return nameTwo
+      return nameTwo;
     };
     return {
       playerOneName,
-      playerTwoName
-    }
+      playerTwoName,
+    };
   })();
 
   return {
     Player,
     selectPlayer,
-    getPlayerNames
-  }
+    getPlayerNames,
+  };
 })();
-export default playerManager
+export default playerManager;
