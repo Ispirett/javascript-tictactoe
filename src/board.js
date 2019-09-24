@@ -6,9 +6,7 @@ const board = (() => {
   const winningCases = (array, params) => {
 
     const { currentPlayer, GameOver, icon, iconTwo, winningMessage } = params;
-
     const positions = winningPositions(array);
-
     const winner = currentPlayer.name() + winningMessage;
     positions.flat().forEach((boxArray) => {
       if (boxArray.every(e => e.innerHTML === icon)) {
@@ -61,7 +59,6 @@ const board = (() => {
     }
   };
 
-
   const gameOver = (playerName, over = false, GameOver) => {
     GameOver = over;
     if (GameOver) {
@@ -69,7 +66,6 @@ const board = (() => {
       else window.close();
     }
   };
-
 
   return {
     winningCases,

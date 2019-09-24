@@ -1,4 +1,5 @@
-/*global document*/
+  /*global document*/
+  
 const removeAnimation = () => {
   const container = document.querySelector('.container');
   container.addEventListener('animationend', (event) => {
