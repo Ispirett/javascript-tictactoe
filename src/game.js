@@ -11,7 +11,7 @@ function titTacToe() {
     'X',
     'O',
     false,
-    ' Won the game'.");
+    ' Won the game.');
 
   let { turn, icon, iconTwo, GameOver, winningMessage } = gameManager;
 

@@ -8,6 +8,6 @@ const utilities = (() => {
   return {
     displayMessage;
   }
-})();
+}();
 
 export default utilities;

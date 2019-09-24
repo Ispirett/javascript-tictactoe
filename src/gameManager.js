@@ -1,5 +1,4 @@
 export default class GameManager {
-
   constructor(turn, icon, iconTwo, gameOver, winningMessage) {
     this.turn = turn;
     this.icon = icon;
@@ -9,39 +8,33 @@ export default class GameManager {
   }
 
   get turn() {
-    return this._turn
+    return this.turn;
   }
   set turn(value) {
-    this._turn = value
+    this.turn = value;
   }
-
   get icon() {
-    return this._icon
+    return this.icon;
   }
-
   set icon(value) {
-    return this._icon = value
+    return this.icon = value;
   }
   get iconTwo() {
-    return this._iconTwo
+    return this.iconTwo;
   }
   set iconTwo(value) {
-    return this._iconTwo = value
+    return this.iconTwo = value;
   }
-
   get gameOver() {
-    return this._gameOver
+    return this.gameOver;
   }
   set gameOver(value) {
-    return this._gameOver = value
+    return this.gameOver = value;
   }
-
   get winningMessage() {
-    return this._winningMessage
+    return this.winningMessage;
   }
-
   set winningMessage(value) {
-    return this._winningMessage = value
+    return this.winningMessage = value;
   }
-
 }
