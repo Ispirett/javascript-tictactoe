@@ -17,30 +17,28 @@ const board = (() => {
       if (boxArray.every(e => e.innerHTML === iconTwo)) {
         gameOver(winner, true, GameOver)
       }
-
     })
-
   };
 
   const winningPositions = (b) => {
     const horizontal = [
       [b[0], b[1], b[2]],
       [b[3], b[4], b[5]],
-      [b[6], b[7], b[8]]
+      [b[6], b[7], b[8]],
     ];
     const vertical = [
       [b[0], b[3], b[6]],
       [b[1], b[4], b[7]],
-      [b[2], b[5], b[8]]
+      [b[2], b[5], b[8]],
     ];
     const diagonal = [
       [b[0], b[4], b[8]],
-      [b[2], b[4], b[6]]
+      [b[2], b[4], b[6]],
 
     ];
 
 
-    return [horizontal, vertical, diagonal]
+    return [horizontal, vertical, diagonal];
   };
 
   const isPositionTaken = (element) => {
@@ -67,7 +65,7 @@ const board = (() => {
     GameOver = over;
     if (GameOver) {
       if (confirm(playerName + " Do you want to play again?")) window.location.reload();
-      else window.close()
+      else window.close();
     }
   };
 
@@ -76,7 +74,7 @@ const board = (() => {
     winningCases,
     isPositionTaken,
     setPosition,
-    drawGame
+    drawGame,
   }
 })();
 export {
