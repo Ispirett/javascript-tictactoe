@@ -1,5 +1,4 @@
-    /*global window, confirm*/
-
+ /*global window, confirm*/
 import { addAnimation, addBadInputAnim } from './animation';
 import utilities from './utilties';
 

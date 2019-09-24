@@ -1,3 +1,4 @@
+ /*global document*/
 const utilities = (() => {
   const displayMessage = (message) => {
     const msg = document.getElementById('msg');

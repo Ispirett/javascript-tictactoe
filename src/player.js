@@ -1,5 +1,4 @@
-// Player
-
+ /*global window*/
 const playerManager = (() => {
   const Player = (playerName, playerIcon) => {
     const name = () => playerName;
@@ -17,7 +16,7 @@ const playerManager = (() => {
       const nameOne = window.prompt('PlayerOne name');
       if (nameOne === "") return playerOneName();
       else if (nameOne === null) {
-        return 'Greatest-loser-ever';
+        return 'Player-1';
       }
       return nameOne;
     };
@@ -29,7 +28,7 @@ const playerManager = (() => {
         try {
           callback();
         } catch (e) { }
-        return 'Loser-For-Sure';
+        return 'Player-2';
       }
       try {
         callback();

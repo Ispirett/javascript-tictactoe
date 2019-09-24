@@ -1,3 +1,4 @@
+ /*global document*/
 import playerManager from './player';
 import { board } from './board';
 import utilities from './utilties';
