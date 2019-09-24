@@ -57,7 +57,7 @@ const board = (() => {
 
   const drawGame = (turn, GameOver) => {
     if (turn === 0 && !GameOver) {
-      gameOver("Too bad, it's a draw!", true, GameOver)
+      gameOver("Too bad, it's a draw!", true, GameOver);
     }
   };
 
