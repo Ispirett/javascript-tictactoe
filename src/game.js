@@ -35,14 +35,13 @@ function titTacToe() {
             winningMessage });
             turn -= 1;
         board.drawGame(turn,GameOver);
+        return currentPlayer
     };
 
     const boxes = document.querySelectorAll('.box');
-    boxes.forEach((box, index) => {
+    boxes.forEach((box) => {
         box.onclick = (element) => {
-            switchTurn(element);
-            const playerName = playerManager.selectPlayer(turn, playerOne, playerTwo).name();
-            utilities.displayMessage(`It's ${playerName} turn`);
+            utilities.displayMessage(`It's ${ switchTurn(element).name()} turn`);
         }
 
     })
