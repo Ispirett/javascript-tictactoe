@@ -1,6 +1,6 @@
-import { Player, selectPlayer } from './player'
-import { winningCases, winningPositions, isPositionTaken,setPosition,drawGame } from './board'
-import { displayMessage } from "./utilties";
+import playerManager from './player'
+import { board } from './board'
+import utilities from "./utilties";
 import { removeAnimation } from "./animation"
 import GameManager from "./gameManager"
 
@@ -15,44 +15,34 @@ function titTacToe() {
 
     let { turn, icon, iconTwo, GameOver, winningMessage } = gameManager;
 
-    let nameOne = window.prompt("PlayerOne name");
-    let nameTwo = window.prompt("PlayerTwo name");
-    const playerOne = Player(nameOne, icon);
-    const playerTwo = Player(nameTwo, iconTwo);
+    let nameOne = playerManager.getPlayerNames.playerOneName();
+    let nameTwo = playerManager.getPlayerNames.playerTwoName();
+
+    const playerOne = playerManager.Player(nameOne, icon);
+    const playerTwo = playerManager.Player(nameTwo, iconTwo);
     
     removeAnimation();
     
     const switchTurn = (element) => {
-        const currentPlayer = selectPlayer(turn, playerOne, playerTwo);
-        if(isPositionTaken(element)) return switchTurn;
-        setPosition(element,currentPlayer);
+        const currentPlayer = playerManager.selectPlayer(turn, playerOne, playerTwo);
+        if(board.isPositionTaken(element)) return switchTurn;
+       board.setPosition(element,currentPlayer);
 
-        const positions = winningPositions(boxes);
-        winningCases(positions, { turn,
+       board.winningCases(boxes, { turn,
             currentPlayer,
-            gameOver, icon,
+            icon,
             iconTwo,
             winningMessage });
-
-        turn -= 1;
-        drawGame(turn,GameOver, gameOver);
-        console.log(turn)
-    };
-
-    const gameOver = (playerName, over = false) => {
-        GameOver = over;
-        if (GameOver) {
-            if (confirm(playerName + " Do you want to play again?")) window.location.reload();
-            else window.close()
-        }
+            turn -= 1;
+        board.drawGame(turn,GameOver);
     };
 
     const boxes = document.querySelectorAll('.box');
     boxes.forEach((box, index) => {
         box.onclick = (element) => {
             switchTurn(element);
-            const playerName = selectPlayer(turn, playerOne, playerTwo).name();
-            displayMessage(`It's ${playerName} turn`);
+            const playerName = playerManager.selectPlayer(turn, playerOne, playerTwo).name();
+            utilities.displayMessage(`It's ${playerName} turn`);
         }
 
     })
