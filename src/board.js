@@ -1,11 +1,9 @@
 /* global window, confirm */
-/* eslint no-restricted-globals: ["confirm"] */
 import { addAnimation, addBadInputAnim } from './animation';
 import utilities from './utilties';
 
 const board = (() => {
   const winningCases = (array, params) => {
-
     const { currentPlayer, GameOver, icon, iconTwo, winningMessage } = params;
     const positions = winningPositions(array);
     const winner = currentPlayer.name() + winningMessage;

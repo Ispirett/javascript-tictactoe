@@ -5,24 +5,21 @@ const playerManager = (() => {
     const icon = () => playerIcon;
     return { name, icon };
   };
-
   const selectPlayer = (turn, playerOne, playerTwo) => {
     if (turn % 2 !== 0) return playerOne;
     return playerTwo;
   };
-
   const getPlayerNames = (() => {
     const playerOneName = () => {
       const nameOne = window.prompt('PlayerOne name');
-      if (nameOne === "") return playerOneName();
+      if (nameOne === '') return playerOneName();
       else if (nameOne === null) {
         return 'Player-1';
       }
       return nameOne;
     };
-
     const playerTwoName = callback => {
-      let nameTwo = window.prompt('PlayerTwo name');
+      const nameTwo = window.prompt('PlayerTwo name');
       if (nameTwo === "") return playerTwoName();
       else if (nameTwo === null) {
         try {
@@ -40,7 +37,6 @@ const playerManager = (() => {
       playerTwoName,
     };
   })();
-
   return {
     Player,
     selectPlayer,
