@@ -1,28 +1,27 @@
 const removeAnimation = () => {
-    const container = document.querySelector('.container');
-    container.addEventListener('animationend', (event) => {
-        console.log('event added')
-        if (event.animationName === 'arriving') {
-            container.classList.remove('cross-animation')
-        }
-        if (event.animationName === 'nope') {
-            container.classList.remove('wrong-input');
-        }
-    })
+  const container = document.querySelector('.container');
+  container.addEventListener('animationend', (event) => {
+    if (event.animationName === 'arriving') {
+      container.classList.remove('cross-animation')
+    }
+    if (event.animationName === 'nope') {
+      container.classList.remove('wrong-input');
+    }
+  })
 }
 
 const addAnimation = (target, player) => {
-    target.classList.add(`${player.icon()}-mark`, 'background');
+  target.classList.add(`${player.icon()}-mark`, 'background');
 };
 
 const addBadInputAnim = () => {
-    const container = document.querySelector('.container');
-    container.classList.add('wrong-input');
+  const container = document.querySelector('.container');
+  container.classList.add('wrong-input');
 }
 
 
 export {
-    removeAnimation,
-    addAnimation,
-    addBadInputAnim
+  removeAnimation,
+  addAnimation,
+  addBadInputAnim
 }
