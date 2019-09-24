@@ -1,3 +1,4 @@
+    /*global window, confirm*/
 
 import { addAnimation, addBadInputAnim } from './animation';
 import utilities from './utilties';
@@ -62,7 +63,7 @@ const board = (() => {
   const gameOver = (playerName, over = false, GameOver) => {
     GameOver = over;
     if (GameOver) {
-      if (confirm(playerName + " Do you want to play again?")) window.location.reload();
+      if (confirm(playerName + ' Do you want to play again?')) window.location.reload();
       else window.close();
     }
   };
