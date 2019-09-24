@@ -14,39 +14,38 @@ const playerManager = (() => {
 
   const getPlayerNames = (() => {
     const playerOneName = () => {
-      let nameOne = window.prompt("PlayerOne name");
+      const nameOne = window.prompt('PlayerOne name');
       if (nameOne === "") return playerOneName();
       else if (nameOne === null) {
-        return "Greatest-loser-ever";
+        return 'Greatest-loser-ever';
       }
       return nameOne;
     };
 
     const playerTwoName = callback => {
-      let nameTwo = window.prompt("PlayerTwo name");
+      let nameTwo = window.prompt('PlayerTwo name');
       if (nameTwo === "") return playerTwoName();
       else if (nameTwo === null) {
         try {
           callback();
         } catch (e) { }
-        return "Loser-For-Sure";
+        return 'Loser-For-Sure';
       }
       try {
         callback();
       } catch (e) { }
       return nameTwo;
     };
-
     return {
       playerOneName,
-      playerTwoName
+      playerTwoName,
     };
   })();
 
   return {
     Player,
     selectPlayer,
-    getPlayerNames
+    getPlayerNames,
   };
 })();
 export default playerManager;
