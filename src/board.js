@@ -3,7 +3,7 @@ import {addAnimation, addBadInputAnim} from "./animation";
 import { displayMessage } from "./utilties";
 
 const winningCases = (array, params) => {
-    let { turn, currentPlayer, gameOver, icon, iconTwo, winningMessage } = params;
+    let {currentPlayer, gameOver, icon, iconTwo, winningMessage } = params;
 
     const winner = currentPlayer.name() + winningMessage;
     array.flat().forEach(boxArray => {
