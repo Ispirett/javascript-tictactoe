@@ -1,4 +1,4 @@
- /*global window*/
+ /* global window */
 const playerManager = (() => {
   const Player = (playerName, playerIcon) => {
     const name = () => playerName;
