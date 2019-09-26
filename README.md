@@ -4,7 +4,7 @@ In this project we built a Tic Tac Toe game rendered in the browser(no backend).
 
 #### [Assignment link](https://www.theodinproject.com/courses/javascript/lessons/tic-tac-toe-javascript)
 
-#### [Live link]()
+#### [Live link](https://ispirett.github.io/javascript-tictactoe/index.html)
 
 #### Features
 * Both players can add their names.
