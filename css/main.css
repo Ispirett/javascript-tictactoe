@@ -1,0 +1,76 @@
+body {
+  text-align: center; }
+
+.container {
+  background: url(../assets/modified-cross-4.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 5em auto 0;
+  width: 40%;
+  min-width: 45em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 14em);
+  grid-gap: 1em; }
+
+.cross-animation {
+  animation: arriving 1s forwards; }
+
+.msg {
+  height: 3em;
+  font-size: 1.8rem; }
+
+.box {
+  color: transparent; }
+
+.X-mark {
+  background: url(../assets/x-icon.svg); }
+
+.O-mark {
+  background: url(../assets/o-icon.svg); }
+
+.background {
+  animation: vanilla 1s forwards;
+  background-position: 50% 50%;
+  background-repeat: no-repeat; }
+
+.wrong-input {
+  animation: nope 500ms; }
+
+@keyframes vanilla {
+  from {
+    opacity: 0;
+    transform: scale(0.7); }
+  80% {
+    opacity: 1;
+    transform: scale(1.05); }
+  to {
+    transform: scale(1); } }
+
+@keyframes arriving {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); }
+  80% {
+    opacity: 1;
+    transform: translateX(9%); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes nope {
+  0% {
+    transform: translateX(0); }
+  15% {
+    transform: translateX(15%); }
+  30% {
+    transform: translateX(-15%); }
+  45% {
+    transform: translateX(15%); }
+  60% {
+    transform: translateX(-15%); }
+  75% {
+    transform: translateX(15%); }
+  90% {
+    transform: translateX(-15%); }
+  100% {
+    transform: translateX(0); } }
