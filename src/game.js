@@ -5,7 +5,7 @@ import utilities from './utilties';
 import { setupAnimEvents } from './animation';
 import GameManager from './gameManager';
 
-function something() {
+function gameSetup() {
 
   const mainContainer = document.querySelector('.container');
   const pageTitle = document.querySelector('.page-title');
@@ -31,9 +31,6 @@ function titTacToe(nameOne, nameTwo) {
 
   let { turn } = gameManager;
   const { icon, iconTwo, GameOver, winningMessage } = gameManager;
-
-  // let nameOne = playerManager.getPlayerNames.playerOneName();
-  // let nameTwo = playerManager.getPlayerNames.playerTwoName();
 
   const playerOne = playerManager.Player(nameOne, icon);
   const playerTwo = playerManager.Player(nameTwo, iconTwo);
@@ -67,5 +64,5 @@ function titTacToe(nameOne, nameTwo) {
   });
 }
 
-something();
+gameSetup();
 
