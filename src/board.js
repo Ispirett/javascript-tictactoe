@@ -31,7 +31,6 @@ const board = (() => {
     const diagonal = [
       [b[0], b[4], b[8]],
       [b[2], b[4], b[6]],
-
     ];
 
 
