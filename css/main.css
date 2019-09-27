@@ -1,20 +1,76 @@
 body {
+  background-color: rgba(130, 140, 230, 0.356);
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
   text-align: center; }
+
+.page-title {
+  animation: form-appearing 1s forwards;
+  font-size: 4rem;
+  font-family: 'Caveat Brush', cursive; }
+
+.form-names {
+  animation: form-appearing 1s forwards;
+  background-color: white;
+  border-radius: 5px;
+  display: block;
+  padding: 20px;
+  margin: 60px auto;
+  width: 30em;
+  text-align: left; }
+  .form-names fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0; }
+  .form-names h3 {
+    font-size: 1.4rem;
+    text-align: center; }
+  .form-names input {
+    background-color: #FFF;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25em;
+    box-sizing: border-box;
+    display: block;
+    line-height: 1.5;
+    margin: 10px 0 16px;
+    padding: .475rem .75rem;
+    overflow: visible;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    width: 100%; }
+  .form-names input:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+  .form-names .form-button {
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #FFF;
+    background-color: #007bff;
+    display: block;
+    border-color: #007bff;
+    line-height: 1.5;
+    font-size: 1rem;
+    padding: .375rem .75rem;
+    margin: 10px auto 0;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; }
+  .form-names .form-button:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc; }
 
 .container {
   background: url(../assets/modified-cross-4.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  display: none;
   margin: 5em auto 0;
   width: 40%;
   min-width: 45em;
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 14em);
   grid-gap: 1em; }
-
-.cross-animation {
-  animation: arriving 1s forwards; }
 
 .msg {
   height: 3em;
@@ -29,13 +85,50 @@ body {
 .O-mark {
   background: url(../assets/o-icon.svg); }
 
+.title-gone {
+  animation: title-disappear 500ms forwards; }
+
+.form-gone {
+  animation: form-disapearing 500ms forwards; }
+
+.cross-arriving {
+  animation: arriving 1s forwards; }
+
 .background {
   animation: vanilla 1s forwards;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
 .wrong-input {
-  animation: nope 500ms; }
+  animation: nope 500ms both; }
+
+@keyframes form-appearing {
+  0% {
+    opacity: 0;
+    transform: scale(0.85); }
+  80% {
+    opacity: 1;
+    transform: scale(1.025); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes form-disapearing {
+  from {
+    opacity: 1;
+    transform: translateX(0); }
+  to {
+    opacity: 0;
+    transform: translateX(100%); } }
+
+@keyframes title-disappear {
+  0% {
+    opacity: 1;
+    transform: scale(1.025); }
+  20% {
+    transform: scale(1); }
+  100% {
+    opacity: 0;
+    transform: scale(0.85); } }
 
 @keyframes vanilla {
   from {
