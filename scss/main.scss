@@ -42,8 +42,8 @@ body {
     box-sizing: border-box;
     display: block;
     line-height: 1.5;
-    margin: 4px 0 12px;
-    padding: .375rem .75rem;
+    margin: 10px 0 16px;
+    padding: .475rem .75rem;
     overflow: visible;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     width: 100%;
@@ -64,7 +64,7 @@ body {
     line-height: 1.5;
     font-size: 1rem;
     padding: .375rem .75rem;
-    margin: 0 auto;
+    margin: 10px auto 0;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
 
