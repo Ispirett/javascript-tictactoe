@@ -8,9 +8,10 @@ import GameManager from './gameManager';
 function something() {
 
   const mainContainer = document.querySelector('.container');
+  const pageTitle = document.querySelector('.page-title');
   const form = document.querySelector('.form-names');
 
-  setupAnimEvents(mainContainer, form);
+  setupAnimEvents(mainContainer, pageTitle, form);
 
   form.onsubmit = element => {
     element.preventDefault();
@@ -19,7 +20,7 @@ function something() {
     const nameTwo = document.getElementById('player2').value;
 
     form.classList.add('form-gone');
-    document.querySelector('.page-title').classList.add('title-gone');
+    pageTitle.classList.add('title-gone');
 
     titTacToe(nameOne, nameTwo);
   }

@@ -1,5 +1,5 @@
 /* global document */
-const setupAnimEvents = (container, form) => {
+const setupAnimEvents = (container, title, form) => {
   container.addEventListener('animationend', event => {
     if (event.animationName === 'arriving') {
       container.classList.remove('cross-arriving');
@@ -12,6 +12,7 @@ const setupAnimEvents = (container, form) => {
   form.addEventListener('animationend', event => {
     if (event.animationName === 'form-disapearing') {
       form.style.display = 'none';
+      title.style.display = 'none';
       container.style.display = 'grid';
     }
   });
