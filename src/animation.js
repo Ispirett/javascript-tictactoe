@@ -1,12 +1,18 @@
 /* global document */
-const removeAnimation = () => {
-  const container = document.querySelector('.container');
-  container.addEventListener('animationend', (event) => {
+const setupAnimEvents = (container, form) => {
+  container.addEventListener('animationend', event => {
     if (event.animationName === 'arriving') {
-      container.classList.remove('cross-animation');
+      container.classList.remove('cross-arriving');
     }
     if (event.animationName === 'nope') {
       container.classList.remove('wrong-input');
+    }
+  });
+
+  form.addEventListener('animationend', event => {
+    if (event.animationName === 'form-disapearing') {
+      form.style.display = 'none';
+      container.style.display = 'grid';
     }
   });
 };
@@ -22,7 +28,7 @@ const addBadInputAnim = () => {
 
 
 export {
-  removeAnimation,
+  setupAnimEvents,
   addAnimation,
   addBadInputAnim,
 };

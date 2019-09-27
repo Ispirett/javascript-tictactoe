@@ -11,27 +11,21 @@ const playerManager = (() => {
   };
   const getPlayerNames = (() => {
     const playerOneName = () => {
-      const nameOne = window.prompt('PlayerOne name');
+      const nameOne = 'a' //window.prompt('PlayerOne name');
       if (nameOne === '') return playerOneName();
       else if (nameOne === null) {
         return 'Player-1';
       }
       return nameOne;
     };
-    const playerTwoName = callback => {
-      const nameTwo = window.prompt('PlayerTwo name');
+    const playerTwoName = (() => {
+      const nameTwo = 'b' //window.prompt('PlayerTwo name');
       if (nameTwo === "") return playerTwoName();
       else if (nameTwo === null) {
-        try {
-          callback();
-        } catch (e) { }
         return 'Player-2';
       }
-      try {
-        callback();
-      } catch (e) { }
       return nameTwo;
-    };
+    });
     return {
       playerOneName,
       playerTwoName,

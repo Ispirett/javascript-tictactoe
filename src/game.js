@@ -2,22 +2,40 @@
 import playerManager from './player';
 import { board } from './board';
 import utilities from './utilties';
-import { removeAnimation } from './animation';
+import { setupAnimEvents } from './animation';
 import GameManager from './gameManager';
 
-function titTacToe() {
+function something() {
+
+  const mainContainer = document.querySelector('.container');
+  const form = document.querySelector('.form-names');
+
+  setupAnimEvents(mainContainer, form);
+
+  form.onsubmit = element => {
+    element.preventDefault();
+
+    const nameOne = document.getElementById('player1').value;
+    const nameTwo = document.getElementById('player2').value;
+
+    form.classList.add('form-gone');
+    document.querySelector('.page-title').classList.add('title-gone');
+
+    titTacToe(nameOne, nameTwo);
+  }
+}
+
+function titTacToe(nameOne, nameTwo) {
   const gameManager = new GameManager(9, 'X', 'O', false, ' Won the game.');
 
   let { turn } = gameManager;
   const { icon, iconTwo, GameOver, winningMessage } = gameManager;
 
-  let nameOne = playerManager.getPlayerNames.playerOneName();
-  let nameTwo = playerManager.getPlayerNames.playerTwoName();
+  // let nameOne = playerManager.getPlayerNames.playerOneName();
+  // let nameTwo = playerManager.getPlayerNames.playerTwoName();
 
   const playerOne = playerManager.Player(nameOne, icon);
   const playerTwo = playerManager.Player(nameTwo, iconTwo);
-
-  removeAnimation();
 
   const switchTurn = element => {
     const currentPlayer = playerManager.selectPlayer(
@@ -48,4 +66,5 @@ function titTacToe() {
   });
 }
 
-titTacToe();
+something();
+
